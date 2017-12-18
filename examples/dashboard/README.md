@@ -1,7 +1,8 @@
 ## Compile
 
 ```bash
-make build
+go get github.com/gorilla/websocket
+go build -o dashboard.exe main.go
 ```
 
 ## Run

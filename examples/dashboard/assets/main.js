@@ -74,26 +74,26 @@ function floatToTime(time) {
 }
 function rpmLight(limits, rpm){
     document.getElementById("rpm").classList.remove("blink", "change", "first");
-    document.getElementsByTagName("body")[0].classList.remove("change", "blink")
+    document.getElementById("overlay").classList.remove("change", "blink")
     if (parseFloat(rpm) > parseFloat(limits.Blink)) {
         document.getElementById("rpm").classList.add("blink");
-        document.getElementsByTagName("body")[0].classList.add("blink");
+        document.getElementById("overlay").classList.add("blink");
         return;
     }
     if (parseFloat(rpm) > parseFloat(limits.Last)) {
         document.getElementById("rpm").classList.add("change");
-        document.getElementsByTagName("body")[0].classList.add("change");
+        document.getElementById("overlay").classList.add("change");
         return;
     }
     if (parseFloat(rpm) > parseFloat(limits.First)) {
-        document.getElementsByTagName("body")[0].classList.add("change");
+        document.getElementById("overlay").classList.add("change");
         return;
     }
 }
 function pitLimiter(engineWarnings) {
     if (engineWarnings.indexOf("0x1") == 0 || engineWarnings.indexOf("0x3") == 0) {
-        document.getElementsByTagName("body")[0].className = "pit-limiter";
+        document.getElementById("overlay").className = "pit-limiter";
     } else {
-        document.getElementsByTagName("body")[0].classList.remove("pit-limiter");
+        document.getElementById("overlay").classList.remove("pit-limiter");
     }
 }

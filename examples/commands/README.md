@@ -1,7 +1,7 @@
 ## Compile
 
 ```bash
-make build
+go build -o commands.exe main.go
 ```
 
 ## Run

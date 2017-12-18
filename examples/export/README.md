@@ -1,11 +1,11 @@
 ## Compile
 
 ```bash
-make build
+go build -o exportData.exe main.go
 ```
 
 ## Run
 
 ```bash
-export.exe
+exportData.exe
 ```
