@@ -1,10 +1,10 @@
-##Compile
+## Compile
 
 ```bash
 make build
 ```
 
-##Run
+## Run
 
 ```bash
 commands.exe

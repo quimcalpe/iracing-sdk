@@ -1,6 +1,6 @@
 package main
 
-import "iracing-sdk"
+import "github.com/quimcalpe/iracing-sdk"
 
 func main() {
 	var sdk irsdk.IRSDK

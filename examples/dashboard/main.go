@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 	"flag"
 	"html/template"
-	"iracing-sdk"
 	"log"
 	"net/http"
 	"time"
 
 	"github.com/gorilla/websocket"
+	"github.com/quimcalpe/iracing-sdk"
 )
 
 var sdk irsdk.IRSDK

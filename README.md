@@ -1,13 +1,13 @@
-#Golang iRacing SDK
+# Golang iRacing SDK
 
 Golang implementation of iRacing SDK
 
-##Install
+## Install
 
-1. Execute `go get gituhub.com/quimcalpe/iracing-sdk`
-2. Add "gituhub.com/quimcalpe/iracing-sdk" to your imports
+1. Execute `go get github.com/quimcalpe/iracing-sdk`
+2. Add "github.com/quimcalpe/iracing-sdk" to your imports
 
-##Usage
+## Usage
 
 Simplest example:
 ```go
@@ -15,7 +15,7 @@ package main
 
 import (
     "fmt"
-    "gituhub.com/quimcalpe/iracing-sdk"
+    "github.com/quimcalpe/iracing-sdk"
 )
 
 func main() {
@@ -35,7 +35,7 @@ import (
     "fmt"
     "log"
 
-    "gituhub.com/quimcalpe/iracing-sdk"
+    "github.com/quimcalpe/iracing-sdk"
 )
 
 func main() {
@@ -64,7 +64,7 @@ sdk = irsdk.Init(reader)
 ...
 ```
 
-##Examples
+## Examples
 
 * [Export](examples/export) Telemetry Data and Session yaml to files
 
