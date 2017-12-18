@@ -22,9 +22,9 @@ import (
 )
 
 func main() {
-	var sdk irsdk.IRSDK
-	sdk = irsdk.Init(nil)
-	defer sdk.Close()
+    var sdk irsdk.IRSDK
+    sdk = irsdk.Init(nil)
+    defer sdk.Close()
     speed, _ := sdk.GetVar("Speed")
     fmt.Printf("Speed: %s", speed)
 }
@@ -42,9 +42,9 @@ import (
 )
 
 func main() {
-	var sdk irsdk.IRSDK
-	sdk = irsdk.Init(nil)
-	defer sdk.Close()
+    var sdk irsdk.IRSDK
+    sdk = irsdk.Init(nil)
+    defer sdk.Close()
 
     for {
         sdk.WaitForData(100 * time.Millisecond)
