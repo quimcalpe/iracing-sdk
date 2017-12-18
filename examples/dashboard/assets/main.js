@@ -47,10 +47,10 @@ window.addEventListener("load", function(evt) {
         updateWidget("gear", gear)
         rpmLight(data.RPMLights, data.RPM.toFixed(0))
         updateWidget("rpm", data.RPM.toFixed(0))
-        updateWidget("last-lap", floatToTime(data.LapLastLapTime))
-        updateWidget("best-lap", floatToTime(data.LapBestLapTime))
+        updateWidget("last-lap", floatToTime(data.LapLastLapTime, 3))
+        updateWidget("best-lap", floatToTime(data.LapBestLapTime, 3))
         updateWidget("position", data.PlayerCarClassPosition)
-        remain = data.SessionTimeRemain == 604800 ? "<em>&infin;</em>" : floatToTime(data.SessionTimeRemain)
+        remain = data.SessionTimeRemain == 604800 ? "<em>&infin;</em>" : floatToTime(data.SessionTimeRemain, 0)
         updateWidget("remaining", remain)
         pitLimiter(data.EngineWarnings)
     }
@@ -62,8 +62,8 @@ function showFlash(msg) {
     document.getElementById("flash").innerHTML = msg;
     document.getElementById("flash").style.display = "block";        
 }
-function floatToTime(time) {
-    lapTime = parseFloat(time).toFixed(3)
+function floatToTime(time, precission) {
+    lapTime = parseFloat(time).toFixed(precission)
     if (lapTime >= 60) {                
         minutes = Math.floor(lapTime / 60)
         seconds = (lapTime - minutes * 60).toFixed(3)
