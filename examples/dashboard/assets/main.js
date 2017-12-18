@@ -62,11 +62,11 @@ function showFlash(msg) {
     document.getElementById("flash").innerHTML = msg;
     document.getElementById("flash").style.display = "block";        
 }
-function floatToTime(time, precission) {
-    lapTime = parseFloat(time).toFixed(precission)
+function floatToTime(time, precision) {
+    lapTime = parseFloat(time).toFixed(precision)
     if (lapTime >= 60) {                
         minutes = Math.floor(lapTime / 60)
-        seconds = (lapTime - minutes * 60).toFixed(3)
+        seconds = (lapTime - minutes * 60).toFixed(precision)
         if (seconds < 10) seconds = "0" + seconds
         lapTime = minutes + ":" + seconds
     }
