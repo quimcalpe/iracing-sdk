@@ -1,0 +1,86 @@
+html {
+    background-color: #000000;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+#flash {
+    background-color: red;
+    color: white;
+    padding: 5px 0;
+    display: none;
+}
+div.widget {
+    width: 90px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    height: 90px;
+    border:0;
+    background-color: #ddddee;
+}
+div.double {
+    width: 194px;
+}
+div.triple {
+    width: 300px;
+}
+div.widget h3 {
+    background-color: #444499;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0;
+    padding: 2px 0;
+}
+div.widget p {
+    text-align: center;
+    font-size: 22px;
+    margin: 20px 0;
+}
+div.widget p.small {
+    margin: 22px 0;
+    font-size: 19px;
+}
+div.widget p.big {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+div.widget p > em{
+    font-size: 50px;
+    top: -16px;
+    position: relative;
+}
+#rpm.first {
+    background-color: #40ac40;
+    font-weight: bold;
+}
+#rpm.change {
+    background-color: #355394;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+#rpm.blink {
+    background-color: #830707;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    cursor: pointer;
+}
+#overlay.change {
+    background-color: #4872cc;
+}
+#overlay.blink {
+    background-color: #c50707;
+}
+#overlay.pit-limiter {
+    background-color: #bf07c5;
+}

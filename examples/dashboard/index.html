@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="assets/styles.css" type="text/css" media="screen">
+    <script src="assets/fullscreen.js"></script>
+    <script src="assets/main.js"></script>
+    <script>var ws_addr = "{{.}}"</script>
+</head>
+<body>
+    <div class="widget double" id='info'><h3>Session info</h3><p class="small" style="margin: 10px 0"></p></div>
+    <div class="widget" id='gear'><h3>Gear</h3><p class="big"></p></div>
+    <div class="widget" id='rpm'><h3>RPM</h3><p></p></div>
+    <div class="widget" id='speed'><h3>Speed</h3><p></p></div>
+    <div class="widget" id='fuel'><h3>Fuel</h3><p></p></div>
+    <div class="widget" id='last-lap'><h3>Last Lap</h3><p class="small"></p></div>
+    <div class="widget" id='best-lap'><h3>Best Lap</h3><p class="small"></p></div>
+    <div class="widget" id='position'><h3>Position</h3><p></p></div>
+    <div class="widget" id='remaining'><h3>Remain.</h3><p></p></div>
+    <div id="flash"></div>
+    <div id="overlay" onclick="toggleFullScreen()"></div>
+</body>
+</html>
