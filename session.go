@@ -9,7 +9,7 @@ import (
 	"golang.org/x/text/encoding/charmap"
 )
 
-func readSessionData(r reader, h *header) []string {
+func readSessionData(r reader, h *header) string {
 	// session data (yaml)
 	dec := charmap.Windows1252.NewDecoder()
 	rbuf := make([]byte, h.sessionInfoLen)
@@ -22,8 +22,7 @@ func readSessionData(r reader, h *header) []string {
 		log.Fatal(err)
 	}
 	yaml := strings.TrimRight(string(rbuf[:h.sessionInfoLen]), "\x00")
-	lines := strings.Split(yaml, "\n")
-	return lines
+	return yaml
 }
 
 func getSessionDataPath(lines []string, path string) (string, error) {
