@@ -2,6 +2,7 @@ package irsdk
 
 import (
 	"fmt"
+	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
 	"strings"
@@ -15,6 +16,7 @@ import (
 type IRSDK struct {
 	r             reader
 	h             *header
+	session       Session
 	s             []string
 	tVars         *TelemetryVars
 	lastValidData int64
@@ -41,6 +43,10 @@ func (sdk *IRSDK) GetVar(name string) (variable, error) {
 	}
 	sdk.tVars.mux.Unlock()
 	return variable{}, fmt.Errorf("Telemetry variable %q not found", name)
+}
+
+func (sdk *IRSDK) GetSession() Session {
+	return sdk.session
 }
 
 func (sdk *IRSDK) GetLastVersion() int {
@@ -122,7 +128,12 @@ func initIRSDK(sdk *IRSDK) {
 		sdk.tVars.vars = nil
 	}
 	if sessionStatusOK(h.status) {
-		sdk.s = readSessionData(sdk.r, &h)
+		sRaw := readSessionData(sdk.r, &h)
+		err := yaml.Unmarshal([]byte(sRaw), &sdk.session)
+		if err != nil {
+			log.Fatal(err)
+		}
+		sdk.s = strings.Split(sRaw, "\n")
 		sdk.tVars = readVariableHeaders(sdk.r, &h)
 		readVariableValues(sdk)
 	}
